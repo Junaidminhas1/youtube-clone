@@ -9,7 +9,7 @@ const Feed = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    fetchFromAPI(`captions?part=snippet&q=${selectedCategory}`).then((data) =>
+    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
       setVideos(data.items)
     );
   }, [selectedCategory]);
@@ -45,8 +45,8 @@ const Feed = () => {
         >
           {selectedCategory} <span style={{ color: "#F31503" }}>videos</span>
         </Typography>
+        <Videos videos={videos} />
       </Box>
-      <Videos videos={videos} />
     </Stack>
   );
 };
