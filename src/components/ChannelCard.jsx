@@ -18,7 +18,8 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
       marginTop,
     }}
   >
-    <Link to={`/channel/${channelDetail?.id?.channelId}`}>
+    {console.log(channelDetail, "hi")}
+    <Link to={`/channel/${channelDetail?.id?.channelId || channelDetail?.id}`}>
       <CardContent
         sx={{
           display: "flex",
